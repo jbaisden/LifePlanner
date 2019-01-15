@@ -1,3 +1,5 @@
-<p>
-  schedule-list works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <app-schedule-item *ngFor="let student of students; let i = index" [student]="student" [index]="i"></app-schedule-item>
+  </div>
+</div>

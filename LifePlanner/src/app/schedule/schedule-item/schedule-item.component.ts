@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Student } from '../student.model';
 
 @Component({
   selector: 'app-schedule-item',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class ScheduleItemComponent implements OnInit {
 
   constructor() { }
+  @Input() student: Student;
+  @Input() index: number;
 
   ngOnInit() {
   }
