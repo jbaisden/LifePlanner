@@ -7,13 +7,15 @@ import { FormsModule } from '@angular/forms';
 import { ScheduleEditComponent } from './schedule/schedule-edit/schedule-edit.component';
 import { ScheduleListComponent } from './schedule/schedule-list/schedule-list.component';
 import { ScheduleItemComponent } from './schedule/schedule-item/schedule-item.component';
+import { ScheduleComponent } from './schedule/schedule/schedule.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ScheduleEditComponent,
     ScheduleListComponent,
-    ScheduleItemComponent
+    ScheduleItemComponent,
+    ScheduleComponent
   ],
   imports: [
     FormsModule,

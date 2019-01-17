@@ -14,14 +14,15 @@ export class ScheduleEditComponent implements OnInit {
   editMode = false;
   editItemIndex: number;
 
-  constructor(private scheduleService: ScheduleService) { }
+  constructor(private scheduleDataService: ScheduleService) { }
 
   ngOnInit() {
   }
 
   onSave(form: NgForm) {
+    //form.value = Student object
     const value = form.value;
-    this.scheduleService.addStudent(value.student);
+    this.scheduleDataService.addStudent(value.student);
     this.slForm.resetForm();
   }
 
