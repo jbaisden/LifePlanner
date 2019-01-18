@@ -8,9 +8,9 @@ import { Subject } from 'rxjs';
 export class ScheduleService {
 
   private students: Student[] = [
-    new Student('Bob'),
-    new Student('James'),
-    new Student('Ashley')
+    new Student('Bob', 1),
+    new Student('James', 2),
+    new Student('Ashley', 3)
   ];
 
   studentsChanged = new Subject<Student[]>();
@@ -21,8 +21,14 @@ export class ScheduleService {
     return this.students.slice();
   }
 
+  getStudentId() {
+    return this.students
+      .map(student => student.id) //get array of just student id's
+      .reduce((a, b) => a >= b ? a : b) + 1; //apply function to each element
+  }
+
   addStudent(name: string) {
-    this.students.push(new Student(name));
+    this.students.push(new Student(name, this.getStudentId()));
     this.studentsChanged.next(this.students.slice());
   }
 
