@@ -32,6 +32,13 @@ export class ScheduleService {
       .reduce((a, b) => a >= b ? a : b) + 1; //apply function to each element
   }
 
+  updateStudent(name: string, id: number) {
+    var student = this.students.find(stud => stud.id == id);
+    console.log(id);
+    student.name = name;
+    this.studentsChanged.next(this.students.slice());
+  }
+
   addStudent(name: string) {
     this.students.push(new Student(name, this.getStudentId()));
     this.studentsChanged.next(this.students.slice());

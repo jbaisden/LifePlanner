@@ -24,11 +24,11 @@ export class ScheduleEditComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         this.editItem = this.scheduleDataService.getStudent(+params['id']);
-        console.log(+params['id']);
+        this.editItemIndex = this.editItem.id;
         if (this.editItem) {
-          console.log(this.editItem);
+          this.editMode = true;
           setTimeout(() => {
-            this.slForm.setValue({ name: this.editItem.name, parent: "" });
+            this.slForm.setValue({ name: this.editItem.name, parent: "", id: this.editItem.id });
           }, 50);
         }
       }
@@ -42,8 +42,14 @@ export class ScheduleEditComponent implements OnInit {
   onSave(form: NgForm) {
     //form.value = Student object
     const value = form.value;
-    this.scheduleDataService.addStudent(value.student);
-    this.slForm.resetForm();
+    console.log(value);
+    if (this.editItem) {
+      this.scheduleDataService.updateStudent(value.name, value.id);
+    } else {
+      this.scheduleDataService.addStudent(value.name);
+    }
+    this.router.navigate(['list']);
+    // this.slForm.resetForm();
   }
 
 }
