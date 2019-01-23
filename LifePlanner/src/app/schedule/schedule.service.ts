@@ -21,6 +21,11 @@ export class ScheduleService {
     return this.students.slice();
   }
 
+  getStudent(id: number): Student {
+    var student = this.students.find((s: Student) => s.id == id);
+    return student;
+  }
+
   getStudentId() {
     return this.students
       .map(student => student.id) //get array of just student id's
