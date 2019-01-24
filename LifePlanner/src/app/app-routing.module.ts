@@ -4,6 +4,7 @@ import { StudentListComponent } from 'src/app/student/student-list/student-list.
 import { StudentEditComponent } from 'src/app/student/student-edit/student-edit.component';
 
 const routes: Routes = [
+  { path: '', component: StudentListComponent },
   { path: 'list', component: StudentListComponent },
   { path: 'edit/:id', component: StudentEditComponent }
 ];
