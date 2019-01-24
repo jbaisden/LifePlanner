@@ -4,18 +4,18 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { ScheduleEditComponent } from './schedule/schedule-edit/schedule-edit.component';
-import { ScheduleListComponent } from './schedule/schedule-list/schedule-list.component';
-import { ScheduleItemComponent } from './schedule/schedule-item/schedule-item.component';
-import { ScheduleComponent } from './schedule/schedule/schedule.component';
+import { StudentEditComponent } from 'src/app/student/student-edit/student-edit.component';
+import { StudentListComponent } from 'src/app/student/student-list/student-list.component';
+import { StudentItemComponent } from 'src/app/student/student-item/student-item.component';
+import { StudentComponent } from 'src/app/student/student/student.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ScheduleEditComponent,
-    ScheduleListComponent,
-    ScheduleItemComponent,
-    ScheduleComponent
+    StudentEditComponent,
+    StudentListComponent,
+    StudentItemComponent,
+    StudentComponent
   ],
   imports: [
     FormsModule,
