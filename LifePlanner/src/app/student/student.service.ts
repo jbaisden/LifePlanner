@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Student } from './student.model';
+import { Student } from '../shared/student.model';
 import { Subject } from 'rxjs';
 
 @Injectable({

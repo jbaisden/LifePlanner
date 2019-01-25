@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Student } from '../student.model';
+import { Student } from '../../shared/student.model';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { StudentService } from 'src/app/student/student.service';
 
@@ -24,19 +24,22 @@ export class StudentEditComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         this.editItem = this.scheduleDataService.getStudent(+params['id']);
-        this.editItemIndex = this.editItem.id;
         if (this.editItem) {
+          this.editItemIndex = this.editItem.id;
           this.editMode = true;
           setTimeout(() => {
             this.slForm.setValue({ name: this.editItem.name, parent: "", id: this.editItem.id });
           }, 50);
+        } else {
+          this.editMode = false;
+          this.editItemIndex = 0;
         }
       }
     );
   }
 
   CancelEdit() {
-    this.router.navigate(['list']);
+    this.router.navigate(['student']);
   }
 
   onSave(form: NgForm) {
@@ -48,8 +51,7 @@ export class StudentEditComponent implements OnInit {
     } else {
       this.scheduleDataService.addStudent(value.name);
     }
-    this.router.navigate(['list']);
-    // this.slForm.resetForm();
+    this.router.navigate(['student']);
   }
 
 }

@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { StudentEditComponent } from 'src/app/student/student-edit/student-edit.component';
 import { StudentListComponent } from 'src/app/student/student-list/student-list.component';
 import { StudentItemComponent } from 'src/app/student/student-item/student-item.component';
-import { StudentComponent } from 'src/app/student/student/student.component';
+import { ScheduleEditComponent } from './student/schedule/schedule-edit/schedule-edit.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { StudentComponent } from 'src/app/student/student/student.component';
     StudentEditComponent,
     StudentListComponent,
     StudentItemComponent,
-    StudentComponent
+    ScheduleEditComponent
   ],
   imports: [
     FormsModule,

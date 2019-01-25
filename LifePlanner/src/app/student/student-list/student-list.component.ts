@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Student } from '../student.model';
+import { Student } from '../../shared/student.model';
 import { Subscription } from 'rxjs';
 import { StudentService } from 'src/app/student/student.service';
 
