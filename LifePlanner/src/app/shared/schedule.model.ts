@@ -1,15 +1,17 @@
 import { Time } from "@angular/common";
+import { Appointment } from "src/app/shared/appointment.model";
 
 export class Schedule {
 
+    public professionalId:number;
     public scheduleId: number;
-    public studentId: number;
-    public schdule: DayOfWeekAndTime[];
+    public clientId: number;
+    public appointments: Appointment[];
 
-    constructor(studentId: number, scheduleId: number) {
+    constructor(clientId: number, scheduleId: number) {
         this.scheduleId = scheduleId;
-        this.studentId = studentId;
-        this.schdule = [];
+        this.clientId = clientId;
+        this.appointments = [];
     }
 
 }

@@ -36,9 +36,3 @@ export class ScheduleEditComponent implements OnInit {
   }
 
 }
-
- class RescheduleDescriptorOptions {
-  public Client: string  = "Client";
-  public Professional: string  = "Professional";
-  public Other: string  = "Other";
-}
