@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { RescheduleDescriptorOptions } from 'src/app/shared/reschdule.descriptor.options.model';
+import { MockCreator } from 'src/app/shared/mocker.model';
 
 @Component({
   selector: 'app-schedule-edit',
@@ -23,16 +25,17 @@ export class ScheduleEditComponent implements OnInit {
   });
 
   ngOnInit() {
+    let mc : MockCreator = new MockCreator();
+    console.log(mc.getProfessional(1));
   }
 
   onSubmit() {
-    console.log(this.cancelReasons.Other);
+    console.log(this.cancelReasons.other);
     console.log(this.logSessionForm);
   }
 
   CancelEdit() {
     this.router.navigate(['student']);
-    
   }
 
 }

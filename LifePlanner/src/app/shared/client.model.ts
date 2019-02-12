@@ -2,6 +2,18 @@ import { Schedule } from "src/app/shared/schedule.model";
 
 export class Client {
     
+    constructor(professionalId:number, clientId:number, name:string,number:string,email:string,
+    rate:string,notes:string,initialSynopsis:string) {
+        this.professionalId = professionalId;
+        this.clientId = clientId;
+        this.name = name;
+        this.number = number;
+        this.email = email;
+        this.rate = rate;
+        this.notes = notes;
+        this.initialSynopsis = initialSynopsis;
+    }
+    
     public professionalId:number;
     public clientId:number;
     public schedule:Schedule;
@@ -11,5 +23,6 @@ export class Client {
     public rate:string;
     public notes:string;
     public initialSynopsis:string;
+    public photo:string;
 
 }

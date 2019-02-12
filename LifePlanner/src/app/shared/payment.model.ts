@@ -1,4 +1,7 @@
 export class Payment {
+
+    constructor() {}
+
     public paymentId:number;
     public professionalId:number;
     public clientId:number;

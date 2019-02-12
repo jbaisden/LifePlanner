@@ -1,6 +1,7 @@
 import { RescheduleDescriptorOptions } from "src/app/shared/reschdule.descriptor.options.model";
 
 export class Session {
+    constructor() {}
     public sessionId: number;
     public clientId: number;
     public sessionDateTime: any;
