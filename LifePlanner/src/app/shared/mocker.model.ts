@@ -22,12 +22,12 @@ export class MockCreator {
         let clients: Client[] = new Array<Client>();
         let client: Client;
 
-        client =  new Client(professionalId,2,"John Foe", "555-687-5309", "jb@gmail.com","35.00", "John Foe notes", "");
+        client =  new Client(professionalId,2,"John Foe", "555-687-5309", "jb@gmail.com","35.00", "John Foe notes", "John Foe Initial Synopsis");
         client.schedule = new Schedule(2, 1);
         client.schedule.appointments = this.getAppointments(1);
         clients.push(client);
 
-        client = new Client(professionalId,3,"Xander Foe", "555-333-4244", "xander@gmail.com","55", "xander notes", "")
+        client = new Client(professionalId,3,"Xander Foe", "555-333-4244", "xander@gmail.com","55", "xander notes", "Xander Initial Synopsis")
         client.schedule = new Schedule(3, 1);
         client.schedule.appointments = this.getAppointments(1);
         clients.push(client);

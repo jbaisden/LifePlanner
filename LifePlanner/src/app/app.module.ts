@@ -8,6 +8,8 @@ import { StudentEditComponent } from 'src/app/student/student-edit/student-edit.
 import { StudentListComponent } from 'src/app/student/student-list/student-list.component';
 import { StudentItemComponent } from 'src/app/student/student-item/student-item.component';
 import { ScheduleEditComponent } from './student/schedule/schedule-edit/schedule-edit.component';
+import { ClientListComponent } from './client/client-list/client-list.component';
+import { ClientItemComponent } from './client/client-item/client-item.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ScheduleEditComponent } from './student/schedule/schedule-edit/schedule
     StudentEditComponent,
     StudentListComponent,
     StudentItemComponent,
-    ScheduleEditComponent
+    ScheduleEditComponent,
+    ClientListComponent,
+    ClientItemComponent
   ],
   imports: [
     FormsModule,

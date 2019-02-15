@@ -25,4 +25,8 @@ export class Client {
     public initialSynopsis:string;
     public photo:string;
 
+    public getNextApt():string {
+        return "Monday 4pm";
+    }
+
 }

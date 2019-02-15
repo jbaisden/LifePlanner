@@ -1,0 +1,11 @@
+
+<a style="cursor: pointer;" [routerLink]="['/edit',client.clientId]" routerLinkActive="active" class="list-group-item clearfix">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ client.name }}</h4>
+    <p class="list-group-item-text">{{ client.clientId }}</p>
+    <a style="cursor:pointer" [routerLink]="['/schedule',4]">Set Schedule</a>
+  </div>
+  <div class="pull-right">
+    {{client.getNextApt()}}
+  </div>
+</a>
