@@ -11,6 +11,7 @@ import { ScheduleEditComponent } from './student/schedule/schedule-edit/schedule
 import { ClientListComponent } from './client/client-list/client-list.component';
 import { ClientItemComponent } from './client/client-item/client-item.component';
 import { ClientEditComponent } from './client/client-edit/client-edit.component';
+import { LogSessionComponent } from './client/log-session/log-session.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ClientEditComponent } from './client/client-edit/client-edit.component'
     ScheduleEditComponent,
     ClientListComponent,
     ClientItemComponent,
-    ClientEditComponent
+    ClientEditComponent,
+    LogSessionComponent
   ],
   imports: [
     FormsModule,

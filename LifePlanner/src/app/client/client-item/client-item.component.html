@@ -3,7 +3,8 @@
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{ client.name }}</h4>
     <p class="list-group-item-text">{{ client.clientId }}</p>
-    <a style="cursor:pointer" [routerLink]="['/schedule',4]">Set Schedule</a>
+    <a style="cursor:pointer" [routerLink]="['/schedule',4]">Set Schedule</a> <Br/>
+    <a style="cursor:pointer" [routerLink]="['/client/log-session']">Log Session</a>
   </div>
   <div class="pull-right">
     {{client.getNextApt()}}

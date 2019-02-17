@@ -35,7 +35,7 @@ export class ScheduleEditComponent implements OnInit {
   }
 
   CancelEdit() {
-    this.router.navigate(['student']);
+    this.router.navigate(['client']);
   }
 
 }

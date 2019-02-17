@@ -1,6 +1,7 @@
 import { StringifyOptions } from "querystring";
 
 export class Appointment {
+    
     constructor(appointmentId:number,scheduleId:number,dayOfWeek:string,appointmentTime:string) {
         this.appointmentId = appointmentId;
         this.scheduleId = scheduleId;

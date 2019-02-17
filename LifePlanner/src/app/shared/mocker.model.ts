@@ -45,4 +45,8 @@ export class MockCreator {
 
     }
 
+    public editClient(client:Client) {
+
+    }
+
 }

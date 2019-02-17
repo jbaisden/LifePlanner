@@ -1,0 +1,57 @@
+
+
+<form [formGroup]="logSessionForm" (ngSubmit)="onSubmit()">
+  <table>
+    <tr>
+      <td>
+        Client
+      </td>
+      <td>
+        
+        <select formControlName="name" >
+          <option *ngFor="let n of clients; index as i;" value="{{n}}"  (selected)="i==1" >{{n}}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Date
+      </td>
+      <td>
+        <input type="text" formControlName="sessionDate">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Notes
+      </td>
+      <td>
+        <textarea formControlName="notes" cols="30" rows="4"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>Is Milestone?</td>
+      <td>
+        <label for="isMilestone">
+          <input type="checkbox" formControlName="isMilestone" id="isMilestone" >
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        Reschedule Options here
+
+        <div class="radio" *ngFor="let rescheduleOption of rescheduleOptions">
+          <label>
+          <input type="radio" formControlName="rescheduleOption" [value]="rescheduleOption">
+          {{rescheduleOption}}
+          </label>
+          </div>        
+      </td>
+    </tr>            
+  </table>
+
+  <input type="submit" value="Save">
+</form>
+
+<a routerLink="/client">Return</a>
