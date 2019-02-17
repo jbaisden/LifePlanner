@@ -1,0 +1,18 @@
+<form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+
+  <p>
+    Name: <input type="text"  formControlName="name" name="name"> <br />
+    Phone: <input type="text" formControlName="phone" name="phone"> <br />
+    Email: <input type="text" formControlName="email" name="email"> <br />
+    Rate: <input type="text" formControlName="rate" name="rate"> <br />
+    Notes: <textarea rows="3" cols="20" formControlName="notes"></textarea> <br />
+    Initial Synopsis: <textarea rows="3" cols="20" formControlName="initialSynopsis"></textarea> <br />
+  </p>
+  <br/>
+
+  <a routerLink="['../'], { relativeTo: this.activeRoute.parent }" >Return to List</a>
+
+  <button type="submit">Save</button>
+
+
+</form>
