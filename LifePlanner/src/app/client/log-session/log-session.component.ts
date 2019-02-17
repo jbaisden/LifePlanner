@@ -27,6 +27,7 @@ export class LogSessionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.warn("log-session ngOnInit called.");
   }
 
   onSubmit() {

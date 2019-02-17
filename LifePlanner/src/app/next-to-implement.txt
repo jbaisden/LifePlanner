@@ -1,0 +1,16 @@
+
+DO THIS NEXT 
+
+FIGURE OUT LIFE CYCLE OF COMPONENTS...CLIENT-LIST needs to be able to call init once 
+to get the client list, but subscribe to the service so updates are made available to 
+it. This way we can test the edit-client component and ensure the service updates the 
+right client in the list.
+
+
+GENERAL STRUCTURE THOUGHTS
+
+LOG-SESSION SHOULD PROBABLY BE MOVED INTO ITS OWN FOLDER AS THIS WILL NEED 
+    A LIST COMPONENT EVENTUALLY.
+
+RESIST URGE TO IMPLEMENT FIREBASE - ONLY DO THIS WHEN LIFE CYCLE ISSUES ARE FIGURED OUT
+    AND YOU CAN READ/SAVE/DELETE FROM SERVICE ARRAYS CONSISTENTLY.

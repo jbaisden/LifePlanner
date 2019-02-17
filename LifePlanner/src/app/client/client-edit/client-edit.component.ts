@@ -23,6 +23,8 @@ export class ClientEditComponent implements OnInit {
   });
 
   ngOnInit() {
+    console.warn("client-edit ngOnInit called.");
+
   }
 
   initFromClient() {
