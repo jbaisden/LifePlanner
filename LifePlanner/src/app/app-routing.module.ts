@@ -6,6 +6,7 @@ import { ScheduleEditComponent } from './student/schedule/schedule-edit/schedule
 import { ClientListComponent } from 'src/app/client/client-list/client-list.component';
 import { ClientEditComponent } from 'src/app/client/client-edit/client-edit.component';
 import { LogSessionComponent } from './client/log-session/log-session.component';
+import { PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: ClientListComponent  },
@@ -18,7 +19,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules } )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

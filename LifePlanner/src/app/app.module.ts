@@ -12,6 +12,9 @@ import { ClientListComponent } from './client/client-list/client-list.component'
 import { ClientItemComponent } from './client/client-item/client-item.component';
 import { ClientEditComponent } from './client/client-edit/client-edit.component';
 import { LogSessionComponent } from './client/log-session/log-session.component';
+import { HttpClientModule } from '@angular/common/http';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { BackendFakeService } from 'src/app/backend-fake.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { LogSessionComponent } from './client/log-session/log-session.component'
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    InMemoryWebApiModule.forRoot(BackendFakeService)
   ],
   providers: [],
   bootstrap: [AppComponent]

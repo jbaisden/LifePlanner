@@ -6,6 +6,7 @@ export class Client {
     rate:string,notes:string,initialSynopsis:string) {
         this.professionalId = professionalId;
         this.clientId = clientId;
+        this.id = clientId;
         this.name = name;
         this.number = number;
         this.email = email;
@@ -14,6 +15,7 @@ export class Client {
         this.initialSynopsis = initialSynopsis;
     }
     
+    public id:number;
     public professionalId:number;
     public clientId:number;
     public schedule:Schedule;

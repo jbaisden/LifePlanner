@@ -19,9 +19,15 @@ export class ClientListComponent implements OnInit {
   ngOnInit() {
     console.warn("client-list ngOnInit called.");
 
-    let mocker : MockCreator = new MockCreator();
-    this.professional = mocker.getProfessional(1);
-    this.clients = this.professional.clients;
+    this.clientService.getClients().subscribe(
+      (data : Client[])=>{
+        console.log( data) ;
+        this.clients = data;
+    });
+
+    // let mocker : MockCreator = new MockCreator();
+    // this.professional = mocker.getProfessional(1);
+    // this.clients = this.professional.clients;
   }
 
 }

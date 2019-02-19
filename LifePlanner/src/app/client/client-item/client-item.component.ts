@@ -14,8 +14,10 @@ export class ClientItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.warn("client-item ngOnInit called.");
+    this.client = this.client as Client;
 
+    console.warn("client-item ngOnInit called. Client item instance of client?");
+console.warn(this.client instanceof Client);
   }
 
 }
