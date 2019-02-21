@@ -13,8 +13,9 @@ import { ClientItemComponent } from './client/client-item/client-item.component'
 import { ClientEditComponent } from './client/client-edit/client-edit.component';
 import { LogSessionComponent } from './client/log-session/log-session.component';
 import { HttpClientModule } from '@angular/common/http';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryWebApiModule, HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { BackendFakeService } from 'src/app/backend-fake.service';
+import { ClientService } from 'src/app/client/client.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { BackendFakeService } from 'src/app/backend-fake.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(BackendFakeService)
+    HttpClientInMemoryWebApiModule.forRoot(
+      BackendFakeService, { delay: 0, dataEncapsulation: false }  )
   ],
   providers: [],
   bootstrap: [AppComponent]

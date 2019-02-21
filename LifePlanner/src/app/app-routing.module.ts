@@ -9,7 +9,7 @@ import { LogSessionComponent } from './client/log-session/log-session.component'
 import { PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: ClientListComponent  },
+  { path: '', component: ClientListComponent, pathMatch: 'full'  },
   { path: 'client/edit/:id', component: ClientEditComponent },
   { path: 'client', component: ClientListComponent },
   { path: 'client/log-session', component: LogSessionComponent },

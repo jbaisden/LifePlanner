@@ -1,4 +1,4 @@
-import {InMemoryDbService} from 'angular-in-memory-web-api'
+import {InMemoryDbService, ResponseOptions} from 'angular-in-memory-web-api'
 import { Injectable } from '@angular/core';
 import { Client } from 'src/app/shared/client.model';
 import { Schedule } from 'src/app/shared/schedule.model';
@@ -8,6 +8,8 @@ import { Appointment } from 'src/app/shared/appointment.model';
   providedIn: 'root'
 })
 export class BackendFakeService implements InMemoryDbService {
+
+  clients: Client[] = new Array<Client>();
 
   public getAppointments(scheduleId:number): Appointment[] {
 
@@ -26,7 +28,7 @@ export class BackendFakeService implements InMemoryDbService {
   createDb(){
     console.warn("createDb called");
     
-    let clients: Client[] = new Array<Client>();
+    
     let client: Client;
 
     // let  contacts =  [
@@ -39,7 +41,7 @@ export class BackendFakeService implements InMemoryDbService {
     client =  new Client(1,2,"John Foe", "555-687-5309", "jb@gmail.com","35.00", "John Foe notes", "John Foe Initial Synopsis");
     client.schedule = new Schedule(2, 1);
     client.schedule.appointments = this.getAppointments(1);
-    clients.push(client);
+    this.clients.push(client);
 
     console.warn("control test of instanceof:");
     console.warn(client instanceof Client);
@@ -47,9 +49,15 @@ export class BackendFakeService implements InMemoryDbService {
     client = new Client(1,3,"Xander Foe", "555-333-4244", "xander@gmail.com","55", "xander notes", "Xander Initial Synopsis")
     client.schedule = new Schedule(3, 1);
     client.schedule.appointments = this.getAppointments(1);
-    clients.push(client);
+    this.clients.push(client);
 
-   return {clients};
+   return {"clients":this.clients.slice()};
     
   }
+
+  protected responseInterceptor(res: ResponseOptions, ri: RequestInfo): ResponseOptions {
+    res.body = this.clients;
+    return res;
+  }
+
 }

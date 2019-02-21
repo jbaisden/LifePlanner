@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Client } from 'src/app/shared/client.model';
+import { ClientService } from 'src/app/client/client.service';
+import { ActivatedRoute, Params, Route } from '@angular/router';
+
 
 @Component({
   selector: 'app-client-edit',
@@ -9,11 +12,30 @@ import { Client } from 'src/app/shared/client.model';
 })
 export class ClientEditComponent implements OnInit {
 
+  constructor(private clientService:ClientService,
+     private croute:ActivatedRoute) { }
 
-  constructor() { }
-  client: Client = new Client(1,1,"j", "123-123-3321", "jb@gmail.com", "$34.00", "test", "init synopsis") ;
+  client: Client ;
   n:string = this.client.name;
-  clientForm = new FormGroup({
+  clientForm : FormGroup; 
+  isEditMode : boolean = false;
+  editIndex: number;
+
+  ngOnInit() {
+    console.warn("client-edit ngOnInit called.");
+    this.croute.paramMap.subscribe(params => {
+      console.log(params.get('id'))
+       this.clientService.getClient(params.get('id')).subscribe(
+         (c:Client) => {
+          console.log(c);
+          this.client = c;
+      })   
+      });
+      this.initFromClient();
+  }
+
+  initFromClient() {
+    this.clientForm = new FormGroup({
     name: new FormControl(this.client.name),
     phone: new FormControl(this.client.number),
     email: new FormControl(this.client.email),
@@ -21,14 +43,7 @@ export class ClientEditComponent implements OnInit {
     notes: new FormControl(this.client.notes),
     initialSynopsis: new FormControl(this.client.initialSynopsis),
   });
-
-  ngOnInit() {
-    console.warn("client-edit ngOnInit called.");
-
-  }
-
-  initFromClient() {
-    // this.clientForm.setValue()
+    
   }
 
   onSubmit() {

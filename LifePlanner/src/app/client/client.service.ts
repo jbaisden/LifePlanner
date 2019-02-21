@@ -8,24 +8,25 @@ import { HttpClient } from '@angular/common/http';
 export class ClientService  {
 
   API_URL: string = "/api/";
+  Clients_EndPoint: string = "clients";
+
   constructor(private http: HttpClient) {
     console.warn("client.service.ts");
     
    }
 
   public setClient(client:Client) {
+    return this.http.put(`${this.API_URL + this.Clients_EndPoint}`, client) 
 
-  }
-
-  public getClient(professionalId:number, clientId:number) : Client[] | Client {
-    return new Client(1,2,"","","","","","");
   }
 
   public getClients() {
     console.warn("getClients() in client.service.ts called");
-    return this.http.get<Client[]>(this.API_URL + 'clients');
+    return this.http.get<Client[]>(this.API_URL + this.Clients_EndPoint );
   }
 
-  
+  getClient(clientId){
+    return this.http.get(`${this.API_URL + this.Clients_EndPoint}/${clientId}`) 
+   }
 
 }
