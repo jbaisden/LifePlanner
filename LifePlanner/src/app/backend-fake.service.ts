@@ -1,4 +1,4 @@
-import {InMemoryDbService, ResponseOptions} from 'angular-in-memory-web-api'
+import {InMemoryDbService, ResponseOptions, RequestInfo} from 'angular-in-memory-web-api'
 import { Injectable } from '@angular/core';
 import { Client } from 'src/app/shared/client.model';
 import { Schedule } from 'src/app/shared/schedule.model';
@@ -55,9 +55,16 @@ export class BackendFakeService implements InMemoryDbService {
     
   }
 
-  protected responseInterceptor(res: ResponseOptions, ri: RequestInfo): ResponseOptions {
-    res.body = this.clients;
-    return res;
-  }
+  // protected responseInterceptor(res: ResponseOptions, ri: RequestInfo): ResponseOptions {
+  //   console.warn("response interceptor: requestInfo " );
+  //   console.warn(ri);
+  //   console.warn(res);
+
+  //   if( ri.resourceUrl.indexOf("clients") > -1 ) {
+  //     res.body = ri.collection;
+  //   }
+
+  //   return res;
+  // }
 
 }

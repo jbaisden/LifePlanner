@@ -26,7 +26,7 @@ export class ClientService  {
   }
 
   getClient(clientId){
-    return this.http.get(`${this.API_URL + this.Clients_EndPoint}/${clientId}`) 
+    return this.http.get<Client>(`${this.API_URL + this.Clients_EndPoint}/${clientId}`) 
    }
 
 }

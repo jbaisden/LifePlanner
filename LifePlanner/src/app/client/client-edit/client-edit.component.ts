@@ -16,7 +16,6 @@ export class ClientEditComponent implements OnInit {
      private croute:ActivatedRoute) { }
 
   client: Client ;
-  n:string = this.client.name;
   clientForm : FormGroup; 
   isEditMode : boolean = false;
   editIndex: number;
@@ -27,11 +26,14 @@ export class ClientEditComponent implements OnInit {
       console.log(params.get('id'))
        this.clientService.getClient(params.get('id')).subscribe(
          (c:Client) => {
+          console.log("Client returned from clientService:");
           console.log(c);
           this.client = c;
+          console.log("After getting client from clientService");
+      this.initFromClient();
+          
       })   
       });
-      this.initFromClient();
   }
 
   initFromClient() {
@@ -48,6 +50,7 @@ export class ClientEditComponent implements OnInit {
 
   onSubmit() {
     this.client = this.clientForm.value;
+    this.clientService.setClient(this.client);
     console.warn(this.client);
   }
 
