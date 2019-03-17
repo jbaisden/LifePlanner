@@ -13,7 +13,7 @@ import { ActivatedRoute, Params, Route } from '@angular/router';
 export class ClientEditComponent implements OnInit {
 
   constructor(private clientService:ClientService,
-     private croute:ActivatedRoute) { }
+     private route:ActivatedRoute) { }
 
   client: Client ;
   clientForm : FormGroup; 
@@ -22,7 +22,7 @@ export class ClientEditComponent implements OnInit {
 
   ngOnInit() {
     console.warn("client-edit ngOnInit called.");
-    this.croute.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe(params => {
       console.log(params.get('id'))
        this.clientService.getClient(params.get('id')).subscribe(
          (c:Client) => {
